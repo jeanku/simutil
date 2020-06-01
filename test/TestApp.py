@@ -115,3 +115,9 @@ if __name__ == '__main__':
     # rule规则设置
     # app('oss').rule(allowed_origins=['*'], allowed_methods=['GET'], allowed_headers=['*'], max_age_seconds=100)\
     #     .push_file('test/api.json', '/Users/jemes/workspace/simutil/Storage/Logs/20200528.log')
+
+
+    # Path
+    # print(app('path').resolve())
+    # print(app('path').joinpath('Config'))
+    # exit(0)

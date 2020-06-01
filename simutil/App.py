@@ -16,6 +16,7 @@ class App(object):
         'async': 'simutil.Async.Async',
         'config': 'simutil.ConfigParser.ConfigParser',
         'oss': 'simutil.Oss.Oss',
+        'path': 'simutil.Path.Path',
     }
 
     _share_instance = None
