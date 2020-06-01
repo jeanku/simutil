@@ -2,5 +2,6 @@
 .idea/
 .env
 build/
+simutil.egg-info/
 dist/
 *.py[cod]
