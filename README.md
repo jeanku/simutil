@@ -176,7 +176,7 @@ app('oss').rule(allowed_origins=['*'], allowed_methods=['GET'], allowed_headers=
 # Path路径
 ``` python
 rep = app('path')                               # 指向BASE_PATH的Pathlib对象
-base_path = app('path')。resolve()              # = app('BASE_PATH')
+base_path = app('path').resolve()               # = app('BASE_PATH')
 config_path = rep.joinpath('Config')            # {BASE_PATH}/Config
 logs_path = rep.joinpath('Storage/Logs')        # {BASE_PATH}/Storage/Logs
 # 其他操作和Pathlib一致                                             
