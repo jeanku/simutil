@@ -1,0 +1,22 @@
+#!/usr/bin/python
+# -*- coding: UTF-8 -*-
+
+"""model类"""
+
+__author__ = '%(author)s'
+
+from %(namespace)s.BaseModel import BaseModel
+
+
+class %(classname)s(BaseModel):
+    __database__ = '%(database)s'  # 数据库名 对应.env中配置
+
+    __tablename__ = '%(tablename)s'  # 表名
+
+    __create_time__ = %(create_time)s  # 插入时间字段 如果该字段为None create_time则不会自动添加
+
+    __update_time__ = %(update_time)s  # 更新时间字段 如果该字段为None create_time则不会自动添加
+
+    columns = [
+        %(columns)s
+    ]
