@@ -3,12 +3,12 @@
 python容器& libs
 
 
-# 安装
+# 1. 安装
 ```
 pip install simutil
 ```
 
-# 添加配置文件
+# 2. 添加配置文件
 你需要在你的项目根目录下创建一个.env文件，内容如下:
 
 ``` python
@@ -37,7 +37,7 @@ OSS_ACCESS_SECRET=secret
 OSS_BUCKET_NAME=bucket_name              
 OSS_END_POINT=endpoint
 
-[default.mysql]
+[default.mysql]                         # 数据库等其他配置
 DB_TYPE=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -47,9 +47,9 @@ DB_PASSWORD=password
 DB_CHARSET=utf8mb4
 ```
 
-# 初始化
+# 3. 初始化
 
-容器初始化
+容器BASE_PATH注册
 
 ``` python
 from simutil.App import app
@@ -57,6 +57,8 @@ import os
 
 base_path = os.path.dirname(os.path.dirname(__file__))
 app.register("BASE_PATH", os.path.dirname(os.path.dirname(__file__)))
+
+# 注册完成之后, 你可以在代码任何地方引入app并使用
 ```
 
 # 读取env配置
@@ -153,7 +155,7 @@ app('async').run([hello(index) for index in range(5)])  # 执行
 # oss
 rep = app('request').get('https://api.***.com/index', params={}, header={})
 
-上传读取的内容(从内存中)
+# 上传读取的内容(从内存中)
 app('oss').push('oss/api.json', rep.text)                   # oss/api.json为上传到oss的文件路径名称             
 
 # 设置referer
@@ -166,7 +168,7 @@ app('oss').referer().push('test/api.json', rep.text, {'Content-Encoding': 'utf-8
 filepath = /Users/jemes/workspace/simutil/Storage/Logs/20200528.log
 app('oss').push_file('test/api.json', filepath, {'Content-Encoding': 'utf-8'})
 
-rule规则设置
+# rule规则设置
 app('oss').rule(allowed_origins=['*'], allowed_methods=['GET'], allowed_headers=['*'], max_age_seconds=100)\
     .push_file('test/api.json', '/Users/jemes/workspace/simutil/Storage/Logs/20200528.log')
 ```
@@ -175,6 +177,7 @@ app('oss').rule(allowed_origins=['*'], allowed_methods=['GET'], allowed_headers=
 # App容器
 ``` python
 # 为了实现代码结偶和复用, 延时加载
+# 说明: app('keyname') 拿出来的都是单例, App本身也是单例模式
 
 # 注册class
 class DemoA:
