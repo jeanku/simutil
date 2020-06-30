@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="simutil",
-    version="1.0.5",
+    version="1.0.6",
     author="jeanku, liubing",
     author_email="",
     description="A simple python libs",
