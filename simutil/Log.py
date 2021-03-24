@@ -32,7 +32,7 @@ class Log(object):
     def logger(self):
         date = datetime.datetime.now().strftime("%Y%m%d")
         if self._instance.get(date) is None:
-            logger = logging.getLogger("logging")
+            logger = logging.getLogger("logging1")
             formatter = logging.Formatter('%(asctime)s 【%(levelname)s】%(message)s')
             logger.setLevel(Env()('LOG_LEVEL', 'DEBUG'))  # log level
             fh = logging.FileHandler(self._logfile())
