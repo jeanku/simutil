@@ -30,6 +30,12 @@ REDIS_PORT=6379
 REDIS_PASSWORD =                         
 REDIS_DB=0                               
 
+# rabbitmq 配置
+RABBITMQ_HOST=127.0.0.1
+RABBITMQ_PORT=5672
+RABBITMQ_USER=test
+RABBITMQ_PASSWORD=12345
+
 # oss配置
 OSS_ACCESS_DOMAIN=**                     
 OSS_ACCESS_KEY=key                       
@@ -180,6 +186,13 @@ base_path = app('path').resolve()               # = app('BASE_PATH')
 config_path = rep.joinpath('Config')            # {BASE_PATH}/Config
 logs_path = rep.joinpath('Storage/Logs')        # {BASE_PATH}/Storage/Logs
 # 其他操作和Pathlib一致                                             
+```
+
+# rabbitMQ
+``` python
+rab = app('rabbitmq')                           # 指向BASE_PATH的Pathlib对象
+conn = rab.connection()                         # rabbitmq connection
+channel = rab.channel()                         # rabbitmq channel                                           
 ```
 
 # App容器

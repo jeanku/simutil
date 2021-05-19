@@ -17,6 +17,7 @@ class App(object):
         'config': 'simutil.ConfigParser.ConfigParser',
         'oss': 'simutil.Oss.Oss',
         'path': 'simutil.Path.Path',
+        'rabbitmq': 'simutil.RabbitMQ.RabbitMQ',
     }
 
     _share_instance = None
