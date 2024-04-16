@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="simutil",
-    version="1.0.8",
+    version="1.1.3",
     author="jeanku, liubing",
     author_email="",
     description="A simple python libs",
@@ -25,6 +25,7 @@ setuptools.setup(
     ],
     install_requires=[
         'configparser',
+        'oss2',
     ],
     keywords='util, libs',
     python_requires='>=3',
